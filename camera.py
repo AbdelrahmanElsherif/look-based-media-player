@@ -16,11 +16,3 @@ def show_webcam(mirror=False):
             break  # esc to quit
 
     cv2.destroyAllWindows()
-
-
-def main():
-    show_webcam(mirror=True)
-
-
-if __name__ == '__main__':
-    main()
