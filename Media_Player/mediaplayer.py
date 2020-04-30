@@ -16,7 +16,7 @@ class Window (QWidget):
 
         self.setWindowTitle("Look Alive")
         self.setGeometry(350,100,700,500)
-        self.setWindowIcon(QIcon('playericon.png'))
+        self.setWindowIcon(QIcon('Player.png'))
 
         p = self.palette()
         p.setColor(QPalette.Window,Qt.white)
@@ -27,29 +27,28 @@ class Window (QWidget):
 
         self.show()
 
-    #To create the widgets we need
+    #To Create the widgets we need
     def init_ui(self):
 
-        #Create a media player object
+        #Create a Media player object
         self.mediaplayer = QMediaPlayer(None, QMediaPlayer.VideoSurface)
 
-        #Create video widget object
+        #Create Video widget object
         videowidget = QVideoWidget()
         faceDetetction = QPushButton("Face Detection")
         faceDetetction.setStyleSheet("background-color: orange ")
         faceDetetction.clicked.connect(self.FaceDetection)
 
-        #Create open button
+        #Create Open button
         openBtn = QPushButton('Open Video')
         openBtn.clicked.connect(self.open_file)
         openBtn.setStyleSheet("background-color: orange")
 
-        icon3 = QIcon()
-        icon3.addPixmap(QPixmap("play1.png"), QIcon.Normal, QIcon.Off)
-        #Create button for playing
+
+        #Create Play button
         self.playBtn=QPushButton()
         self.playBtn .setEnabled(False)
-        self.playBtn.setIcon(icon3)
+        self.playBtn.setIcon(QIcon("play1.png"))
         self.playBtn.setStyleSheet("background-color: yellow ")
         #self.playBtn.setIcon (self.style().standardIcon(QStyle.SP_MediaPlay))
         self.playBtn.clicked.connect(self.play_video)
@@ -59,17 +58,38 @@ class Window (QWidget):
                                    "}"
                                    )
 
+        #Create Stop button
+        self.stopBtn = QPushButton()
+        self.stopBtn.setIcon(QIcon("stop1.png"))
+        self.stopBtn.pressed.connect(self.mediaplayer.stop)
+
+        self.label = QLabel()
+        self.label.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Maximum)
+
+
         #Create slider
         self.slider=QSlider(Qt.Horizontal)
         self.slider.setRange(0, 0)
         self.slider.sliderMoved.connect(self.set_position)
 
 
-        #create label
+        #create volume label image
+        self.label1=QLabel()
+        self.label1.setText("")
+        self.label1.setPixmap(QPixmap("speaker-volume"))
+        #self.label1.setFixedSize(100,100)
 
-        self.label=QLabel()
-        self.label.setSizePolicy(QSizePolicy.Preferred,QSizePolicy.Maximum)
+        #create volume slider
+        self.volumeSlider = QSlider()
+        self.volumeSlider.setMaximum(100)
+        self.volumeSlider.setProperty("value", 100)
+        self.volumeSlider.setOrientation(Qt.Horizontal)
+        self.volumeSlider.setObjectName("volumeSlider")
+        self.volumeSlider.valueChanged.connect(self.mediaplayer.setVolume)
 
+
+        spacer =QSpacerItem(20, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        spacerItem1 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         #Create Hbox Layout
         hboxlayout= QHBoxLayout()
@@ -78,14 +98,42 @@ class Window (QWidget):
         #Set Widgets to the hbox layout
         hboxlayout.addWidget(openBtn)
         hboxlayout.addWidget(self.playBtn)
-        hboxlayout.addWidget(self.slider)
+        hboxlayout.addWidget(self.stopBtn)
+        hboxlayout.addItem(spacer)
+        hboxlayout.addWidget(self.label1)
+        hboxlayout.addWidget(self.volumeSlider)
+
+
+        #hboxlayout.addItem(spacerItem)
+
+        #Create another hbox
+        hboxlayout1 = QHBoxLayout()
+        hboxlayout1.setContentsMargins(0, 0, 0, 0)
+
+        #Set its widgets
+        self.currentTimeLabel = QLabel()
+        self.currentTimeLabel.setMinimumSize(QSize(80, 0))
+        self.currentTimeLabel.setAlignment(Qt.AlignRight | Qt.AlignTrailing )
+        self.currentTimeLabel.setObjectName("currentTimeLabel")
+        self.totalTimeLabel = QLabel()
+        self.totalTimeLabel.setMinimumSize(QSize(80, 0))
+        self.totalTimeLabel.setAlignment(Qt.AlignLeading | Qt.AlignLeft )
+        self.totalTimeLabel.setObjectName("totalTimeLabel")
+        self.currentTimeLabel.setText("0:00")
+        self.totalTimeLabel.setText( "0:00")
+       # hboxlayout1.addWidget(self.currentTimeLabel)
+        #hboxlayout1.addWidget(self.slider)
+       # hboxlayout1.addWidget(self.totalTimeLabel)
+
+
+
 
 
         #create vbox layout ( will be the main layout including the hbox layout)
         vboxlayout=QVBoxLayout()
         vboxlayout.addWidget(videowidget)
+        vboxlayout.addWidget(self.slider)
         vboxlayout.addLayout(hboxlayout)
-        vboxlayout.addWidget(self.label)
         vboxlayout.addWidget(faceDetetction)
 
         # set the layout to your window
@@ -110,7 +158,7 @@ class Window (QWidget):
 
 
 
-    # If the video is paued clicking play button enables it, else if it's playing clicking play button pauses it
+    # If the video is paused clicking play button enables it, else if it's playing clicking play button pauses it
     def play_video(self):
         if self.mediaplayer.state() == QMediaPlayer.PlayingState:
             self.mediaplayer.pause()
@@ -126,17 +174,11 @@ class Window (QWidget):
     def mediastate_changed(self, state):
         if self.mediaplayer.state() == QMediaPlayer.PlayingState:
             self.playBtn.setIcon(QIcon('pause1.png'))
-            #self.playBtn.setIcon(
-                #self.style().standardIcon(QStyle.SP_MediaPause)
 
-           # )
 
         else:
             self.playBtn.setIcon(QIcon('play1.png'))
-           # self.playBtn.setIcon(
-               # self.style().standardIcon(QStyle.SP_MediaPlay)
 
-            #)
 
 
     def position_changed(self, position):
@@ -183,7 +225,7 @@ class Window (QWidget):
                     eye_center = (x + x2 + w2 // 2, y + y2 + h2 // 2)
                     radius = int(round((w2 + h2) * 0.25))
                     frame = cv.circle(frame, eye_center, radius, (255, 0, 0), 4)
-            cv.imshow('Capture - Face detection', frame)
+            cv.imshow('YOU ARE BEING WACHED ', frame)
             if how_many_faces == 0:
                 self.mediaplayer.pause()
                 self.mediaplayer.stateChanged
@@ -212,6 +254,4 @@ app.setStyle("Fusion")
 #Make an instance of the Window class
 window=Window()
 sys.exit(app.exec_())
-
-
 
