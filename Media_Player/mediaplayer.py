@@ -44,10 +44,12 @@ class Window (QWidget):
         openBtn.clicked.connect(self.open_file)
         openBtn.setStyleSheet("background-color: orange")
 
+        icon3 = QIcon()
+        icon3.addPixmap(QPixmap("play1.png"), QIcon.Normal, QIcon.Off)
         #Create button for playing
         self.playBtn=QPushButton()
         self.playBtn .setEnabled(False)
-        self.playBtn.setIcon(QIcon('play1.png'))
+        self.playBtn.setIcon(icon3)
         self.playBtn.setStyleSheet("background-color: yellow ")
         #self.playBtn.setIcon (self.style().standardIcon(QStyle.SP_MediaPlay))
         self.playBtn.clicked.connect(self.play_video)
@@ -112,7 +114,7 @@ class Window (QWidget):
     def play_video(self):
         if self.mediaplayer.state() == QMediaPlayer.PlayingState:
             self.mediaplayer.pause()
-            self.playBtn.setIcon(QIcon('pause.png'))
+            self.playBtn.setIcon(QIcon('pause1.png'))
             print("Paused")
 
         else:
@@ -123,14 +125,14 @@ class Window (QWidget):
 
     def mediastate_changed(self, state):
         if self.mediaplayer.state() == QMediaPlayer.PlayingState:
-            self.playBtn.setIcon(QIcon('Paaaaaause.png'))
+            self.playBtn.setIcon(QIcon('pause1.png'))
             #self.playBtn.setIcon(
                 #self.style().standardIcon(QStyle.SP_MediaPause)
 
            # )
 
         else:
-            self.playBtn.setIcon(QIcon('plaaay.jpg'))
+            self.playBtn.setIcon(QIcon('play1.png'))
            # self.playBtn.setIcon(
                # self.style().standardIcon(QStyle.SP_MediaPlay)
 
@@ -185,7 +187,7 @@ class Window (QWidget):
             if how_many_faces == 0:
                 self.mediaplayer.pause()
                 self.mediaplayer.stateChanged
-                self.playBtn.setIcon(QIcon('pause.png'))
+                self.playBtn.setIcon(QIcon('pause1.png'))
                 # self.mediaPlayer.stateChanged.connect(self.statechanged)
                 self.mediaplayer.positionChanged.connect(self.position_changed)
                 self.mediaplayer.durationChanged.connect(self.duration_changed)
