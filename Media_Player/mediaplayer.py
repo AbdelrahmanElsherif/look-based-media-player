@@ -19,7 +19,7 @@ class Window (QWidget):
         self.setWindowIcon(QIcon('Player.png'))
 
         p = self.palette()
-        p.setColor(QPalette.Window,Qt.white)
+        p.setColor(QPalette.Window,Qt.black)
         self.setPalette(p)
 
         self.init_ui()
@@ -42,25 +42,39 @@ class Window (QWidget):
         #Create Open button
         openBtn = QPushButton('Open Video')
         openBtn.clicked.connect(self.open_file)
+        openBtn.setStyleSheet("QPushButton::pressed"
+                                   "{"
+                                   "background-color : black;"
+                                   "}"
+                                   )
         openBtn.setStyleSheet("background-color: orange")
 
+        self.label2 =QLabel()
+        self.label2.setStyleSheet("color: orange;")
+        self.label2.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Maximum)
+        self.label2.setText("To Exit Face Detection Press ESC")
 
         #Create Play button
         self.playBtn=QPushButton()
-        self.playBtn .setEnabled(False)
+        #self.playBtn .setEnabled(False)
         self.playBtn.setIcon(QIcon("play1.png"))
         self.playBtn.setStyleSheet("background-color: yellow ")
         #self.playBtn.setIcon (self.style().standardIcon(QStyle.SP_MediaPlay))
         self.playBtn.clicked.connect(self.play_video)
         self.playBtn.setStyleSheet("QPushButton::pressed"
                                    "{"
-                                   "background-color : yellow;"
+                                   "background-color : green;"
                                    "}"
                                    )
 
         #Create Stop button
         self.stopBtn = QPushButton()
         self.stopBtn.setIcon(QIcon("stop1.png"))
+        self.stopBtn.setStyleSheet("QPushButton::pressed"
+                                   "{"
+                                   "background-color : red;"
+                                   "}"
+                                   )
         self.stopBtn.pressed.connect(self.mediaplayer.stop)
 
         self.label = QLabel()
@@ -134,6 +148,7 @@ class Window (QWidget):
         vboxlayout.addWidget(videowidget)
         vboxlayout.addWidget(self.slider)
         vboxlayout.addLayout(hboxlayout)
+        vboxlayout.addWidget(self.label2)
         vboxlayout.addWidget(faceDetetction)
 
         # set the layout to your window
@@ -160,7 +175,7 @@ class Window (QWidget):
 
     # If the video is paused clicking play button enables it, else if it's playing clicking play button pauses it
     def play_video(self):
-        if self.mediaplayer.state() == QMediaPlayer.PlayingState:
+        if self.mediaplayer.state()  == QMediaPlayer.PlayingState:
             self.mediaplayer.pause()
             self.playBtn.setIcon(QIcon('pause1.png'))
             print("Paused")
@@ -169,6 +184,55 @@ class Window (QWidget):
             self.mediaplayer.play()
             self.playBtn.setIcon(QIcon('play1.png'))
             print("played")
+
+
+
+
+    def FaceDetection(self):
+
+        # -- 2. Read the video stream
+        cap = cv.VideoCapture(0)
+        face_cascade = cv.CascadeClassifier("haarcascade_frontalface_alt.xml")
+        eyes_cascade = cv.CascadeClassifier("haarcascade_eye.xml")
+        while True:
+            ret, frame = cap.read()
+            frame_gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
+            frame_gray = cv.equalizeHist(frame_gray)
+
+            # -- Detect faces
+            faces = face_cascade.detectMultiScale(frame_gray, minSize=(85, 85))
+            how_many_faces = len(faces)
+            for (x, y, w, h) in faces:
+                center = (x + w // 2, y + h // 2)
+                frame = cv.ellipse(frame, center, (w // 2, h // 2), 0, 0, 360, (255, 0, 255), 4)
+                faceROI = frame_gray[y:y + h, x:x + w]
+                # print(x ,y , x, h)
+
+                eyes = eyes_cascade.detectMultiScale(faceROI)
+                for (x2, y2, w2, h2) in eyes:
+                    eye_center = (x + x2 + w2 // 2, y + y2 + h2 // 2)
+                    radius = int(round((w2 + h2) * 0.25))
+                    frame = cv.circle(frame, eye_center, radius, (255, 0, 0), 4)
+            cv.imshow('YOU ARE BEING WATCHED ', frame)
+            if how_many_faces == 0:
+                manual = 0
+                self.mediaplayer.pause()
+                self.mediaplayer.stateChanged
+                self.playBtn.setIcon(QIcon('pause1.png'))
+                #self.mediaplayer.stateChanged.connect(self.mediastate_changed)
+                self.mediaplayer.positionChanged.connect(self.position_changed)
+                self.mediaplayer.durationChanged.connect(self.duration_changed)
+            else:
+
+                self.mediaplayer.play()
+                self.mediaplayer.stateChanged
+                self.playBtn.setIcon(QIcon('play1.png'))
+
+            if cv.waitKey(10) == 27:
+                cap.release()
+                # sys.exit()
+                # cv2.destroyAllWindows()
+                break
 
 
     def mediastate_changed(self, state):
@@ -199,50 +263,7 @@ class Window (QWidget):
 
 
 
-    def FaceDetection(self):
 
-        # -- 2. Read the video stream
-        cap = cv.VideoCapture(0)
-        face_cascade = cv.CascadeClassifier("haarcascade_frontalface_alt.xml")
-        eyes_cascade = cv.CascadeClassifier("haarcascade_eye.xml")
-        while True:
-            ret, frame = cap.read()
-            frame_gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
-            frame_gray = cv.equalizeHist(frame_gray)
-
-            # -- Detect faces
-            faces = face_cascade.detectMultiScale(frame_gray, minSize=(85, 85))
-            how_many_faces = len(faces)
-            for (x, y, w, h) in faces:
-                center = (x + w // 2, y + h // 2)
-                frame = cv.ellipse(frame, center, (w // 2, h // 2), 0, 0, 360, (255, 0, 255), 4)
-                faceROI = frame_gray[y:y + h, x:x + w]
-                # print(x ,y , x, h)
-
-                # -- In each face, detect eyes
-                eyes = eyes_cascade.detectMultiScale(faceROI)
-                for (x2, y2, w2, h2) in eyes:
-                    eye_center = (x + x2 + w2 // 2, y + y2 + h2 // 2)
-                    radius = int(round((w2 + h2) * 0.25))
-                    frame = cv.circle(frame, eye_center, radius, (255, 0, 0), 4)
-            cv.imshow('YOU ARE BEING WACHED ', frame)
-            if how_many_faces == 0:
-                self.mediaplayer.pause()
-                self.mediaplayer.stateChanged
-                self.playBtn.setIcon(QIcon('pause1.png'))
-                # self.mediaPlayer.stateChanged.connect(self.statechanged)
-                self.mediaplayer.positionChanged.connect(self.position_changed)
-                self.mediaplayer.durationChanged.connect(self.duration_changed)
-            else:
-                self.mediaplayer.play()
-                self.mediaplayer.stateChanged
-                self.playBtn.setIcon(QIcon('play1.png'))
-
-            if cv.waitKey(10) == 27:
-                cap.release()
-                sys.exit()
-                cv2.destroyAllWindows()
-                break
 
 
 
