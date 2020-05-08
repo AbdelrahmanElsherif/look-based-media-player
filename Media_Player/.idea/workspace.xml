@@ -2,41 +2,50 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="925a5f35-d688-49bd-b339-62e1860b709f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../.ipynb_checkpoints/Untitled-checkpoint.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.ipynb_checkpoints/Untitled1-checkpoint.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MainWindow.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MediaPlayer GUI/.pylintrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MediaPlayer GUI/__MACOSX/mediaplayer/._.DS_Store" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MediaPlayer GUI/__MACOSX/mediaplayer/._mainwindow.ui" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MediaPlayer GUI/__MACOSX/mediaplayer/._mediaplayer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MediaPlayer GUI/__MACOSX/mediaplayer/._screenshot-mediaplayer2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MediaPlayer GUI/__MACOSX/mediaplayer/._test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MediaPlayer GUI/__MACOSX/mediaplayer/images/._.DS_Store" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MediaPlayer GUI/__MACOSX/mediaplayer/images/._application-image.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MediaPlayer GUI/__MACOSX/mediaplayer/images/._control-pause.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MediaPlayer GUI/__MACOSX/mediaplayer/images/._control-skip-180.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MediaPlayer GUI/__MACOSX/mediaplayer/images/._control-skip.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MediaPlayer GUI/__MACOSX/mediaplayer/images/._control-stop-square.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MediaPlayer GUI/__MACOSX/mediaplayer/images/._control.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MediaPlayer GUI/__MACOSX/mediaplayer/images/._speaker-volume.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../images/application-image.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../images/control-pause.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../images/control-skip-180.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../images/control-skip.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../images/control-stop-square.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../images/control.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../images/speaker-volume.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mainwindow.ui" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mediaplayer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../screenshot-mediaplayer1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../screenshot-mediaplayer2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Cascade_Classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Cascade_Classifier.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Cascade_tutorial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MediaPlayer GUI/mediaplayer.py" beforeDir="false" afterPath="$PROJECT_DIR$/../MediaPlayer GUI/mediaplayer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data.rar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../camera.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/haarcascades/haarcascade_eye.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/haarcascades/haarcascade_eye_tree_eyeglasses.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/haarcascades/haarcascade_frontalcatface.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/haarcascades/haarcascade_frontalcatface_extended.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/haarcascades/haarcascade_frontalface_alt.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/haarcascades/haarcascade_frontalface_alt2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/haarcascades/haarcascade_frontalface_alt_tree.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/haarcascades/haarcascade_frontalface_default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/haarcascades/haarcascade_fullbody.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/haarcascades/haarcascade_lefteye_2splits.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/haarcascades/haarcascade_licence_plate_rus_16stages.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/haarcascades/haarcascade_lowerbody.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/haarcascades/haarcascade_profileface.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/haarcascades/haarcascade_righteye_2splits.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/haarcascades/haarcascade_russian_plate_number.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/haarcascades/haarcascade_smile.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/haarcascades/haarcascade_upperbody.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/haarcascades_cuda/haarcascade_eye.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/haarcascades_cuda/haarcascade_eye_tree_eyeglasses.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/haarcascades_cuda/haarcascade_frontalface_alt.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/haarcascades_cuda/haarcascade_frontalface_alt2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/haarcascades_cuda/haarcascade_frontalface_alt_tree.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/haarcascades_cuda/haarcascade_frontalface_default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/haarcascades_cuda/haarcascade_fullbody.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/haarcascades_cuda/haarcascade_lefteye_2splits.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/haarcascades_cuda/haarcascade_lowerbody.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/haarcascades_cuda/haarcascade_profileface.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/haarcascades_cuda/haarcascade_righteye_2splits.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/haarcascades_cuda/haarcascade_smile.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/haarcascades_cuda/haarcascade_upperbody.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/hogcascades/hogcascade_pedestrians.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/lbpcascades/lbpcascade_frontalcatface.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/lbpcascades/lbpcascade_frontalface.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/lbpcascades/lbpcascade_frontalface_improved.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/lbpcascades/lbpcascade_profileface.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/lbpcascades/lbpcascade_silverware.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/readme.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/vec_files/trainingfaces_24-24.vec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../haarcascade_eye.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../haarcascade_frontalcatface.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../haarcascade_frontalface_alt.xml" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -73,7 +82,28 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.mediaplayer">
-    <configuration name="Trial" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="Tryy" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Media_Player" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\Dell\AppData\Local\Programs\Python\Python37\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Tryy.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="detect_drowsiness" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Media_Player" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -81,11 +111,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../drowsiness-detection" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Trial.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../drowsiness-detection/detect_drowsiness.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -160,15 +190,17 @@
     <list>
       <item itemvalue="Python.mediaplayer" />
       <item itemvalue="Python.tutorial_source_code" />
-      <item itemvalue="Python.Trial" />
       <item itemvalue="Python.encoderr" />
+      <item itemvalue="Python.Tryy" />
+      <item itemvalue="Python.detect_drowsiness" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.mediaplayer" />
+        <item itemvalue="Python.Tryy" />
+        <item itemvalue="Python.detect_drowsiness" />
         <item itemvalue="Python.encoderr" />
         <item itemvalue="Python.tutorial_source_code" />
-        <item itemvalue="Python.Trial" />
       </list>
     </recent_temporary>
   </component>
@@ -197,5 +229,15 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Tryy.py</url>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
