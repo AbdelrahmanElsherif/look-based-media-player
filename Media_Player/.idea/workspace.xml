@@ -1,7 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="925a5f35-d688-49bd-b339-62e1860b709f" name="Default Changelist" comment="" />
+    <list default="true" id="925a5f35-d688-49bd-b339-62e1860b709f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../.ipynb_checkpoints/Untitled-checkpoint.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.ipynb_checkpoints/Untitled1-checkpoint.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MainWindow.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MediaPlayer GUI/.pylintrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MediaPlayer GUI/__MACOSX/mediaplayer/._.DS_Store" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MediaPlayer GUI/__MACOSX/mediaplayer/._mainwindow.ui" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MediaPlayer GUI/__MACOSX/mediaplayer/._mediaplayer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MediaPlayer GUI/__MACOSX/mediaplayer/._screenshot-mediaplayer2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MediaPlayer GUI/__MACOSX/mediaplayer/._test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MediaPlayer GUI/__MACOSX/mediaplayer/images/._.DS_Store" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MediaPlayer GUI/__MACOSX/mediaplayer/images/._application-image.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MediaPlayer GUI/__MACOSX/mediaplayer/images/._control-pause.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MediaPlayer GUI/__MACOSX/mediaplayer/images/._control-skip-180.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MediaPlayer GUI/__MACOSX/mediaplayer/images/._control-skip.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MediaPlayer GUI/__MACOSX/mediaplayer/images/._control-stop-square.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MediaPlayer GUI/__MACOSX/mediaplayer/images/._control.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MediaPlayer GUI/__MACOSX/mediaplayer/images/._speaker-volume.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../images/application-image.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../images/control-pause.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../images/control-skip-180.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../images/control-skip.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../images/control-stop-square.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../images/control.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../images/speaker-volume.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mainwindow.ui" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mediaplayer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../screenshot-mediaplayer1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../screenshot-mediaplayer2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cascade_Classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Cascade_Classifier.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cascade_tutorial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MediaPlayer GUI/mediaplayer.py" beforeDir="false" afterPath="$PROJECT_DIR$/../MediaPlayer GUI/mediaplayer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data.rar" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,12 +52,12 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1aoK9aufcbhyeBsJLBcHjxiSEcZ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
