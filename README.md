@@ -9,10 +9,10 @@ This is done using the camera or webcam on top of the computer. As long as the c
 
 ---
 ## Installation 
-- Download lastest most compatible python version to your OS https://www.python.org/downloads/
-- Download PyQt5 using pip command 
+- Download lastest most compatible python version to your OS https://www.python.org/downloads/ 
+- Python 3.6 and 3.7 were used in developing the project
 ```
-pip install pyqt5
+python -m pip install -r requirements.txt
 ```
 
 ## Functionality
