@@ -9,7 +9,9 @@ This is done using the camera or webcam on top of the computer. As long as the c
 
 ---
 ## Functionality
-![Alt text](C:\Users\Abdelrahman\Desktop\capture.png?raw=true "Media Player")
+
+![alt text](https://github.com/AbdelrahmanElsherif/look-based-media-player/blob/master/Media_Player/Capture.PNG?raw=true)
+
  1. Click on openfile and choose the file you want to play
  2. Press play button
  3. To start the face,sleepiness-detection you click on face detection button, then the webcam will start capturing the face & the eyes
