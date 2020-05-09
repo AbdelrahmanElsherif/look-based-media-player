@@ -72,6 +72,7 @@ python -m pip install -r requirements.txt
 
 
  
- > Note: While face detection is on, you can manually pause by clicking on ESC to close the face detection first, then click on the pause button
+ > Note: To regain manual control over mediaplayer, Press ESC to release webcam feed <br />
+   You can return back to face detection feature by pressing face detection button 
  
 ---
