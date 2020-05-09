@@ -51,7 +51,7 @@ python -m pip install -r requirements.txt
 
 
 
-Pressing Retry button, will enable the user to choose another file <br />
+>Pressing Retry button, will enable the user to choose another file <br />
 Pressing Abort button, will close and the mediaplayer 
 
 
@@ -66,7 +66,7 @@ Pressing Abort button, will close and the mediaplayer
 
 
 
-Pressing Retry button, will enable the user to contiue watching 
+>Pressing Retry button, will enable the user to contiue watching 
 Pressing Abort button, will close and exit the medialayer  
 
 
