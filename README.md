@@ -54,7 +54,7 @@ python -m pip install -r requirements.txt
 
    >Pressing Retry button, will enable the user to contiue watching <br />
    >>Note: On pressing Retry user's eyes should be wide open to continue playing the video otherwise it might take a couple of times pressing Retry button <br />
-   Pressing Abort button, will close and exit the medialayer  
+   >Pressing Abort button, will close and exit the medialayer  
 
  ## Supported Formats 
 
