@@ -17,7 +17,7 @@ python -m pip install -r requirements.txt
 
 ## Functionality
 
-![alt text](https://github.com/AbdelrahmanElsherif/look-based-media-player/blob/master/Media_Player/Capture.PNG?raw=true)
+![alt text](https://github.com/AbdelrahmanElsherif/look-based-media-player/blob/master/Media_Player/Screenshot%20(178).png?raw=true)
 
  1. Click on openfile and choose the file you want to play
  2. Press play button
