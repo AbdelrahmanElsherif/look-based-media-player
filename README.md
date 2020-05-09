@@ -46,12 +46,20 @@ On entering a wrong file format or no file at all, file error window will pop up
 
 
 
+
+
+
+
 Pressing Retry button, will enable the user to choose another file 
 Pressing Abort button, will close and the mediaplayer 
 
 
 On detecting eyes dowsiness and sleepliness, Drowsiness window will pop up 
 -![alt text](https://github.com/AbdelrahmanElsherif/look-based-media-player/blob/master/Media_Player/Screenshot%20(182).png?raw=true)
+
+
+
+
 
 
 
