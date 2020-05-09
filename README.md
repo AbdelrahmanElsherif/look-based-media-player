@@ -17,11 +17,27 @@ python -m pip install -r requirements.txt
 
 ## Functionality
 
+Media Player GUI
 ![alt text](https://github.com/AbdelrahmanElsherif/look-based-media-player/blob/master/Media_Player/Screenshot%20(178).png?raw=true)
 
- 1. Click on openfile and choose the file you want to play
- 2. Press play button
- 3. To start the face,sleepiness-detection you click on face detection button, then the webcam will start capturing the face & the eyes
+Click on Open Video and choose the file you want to play then press the Play button 
+![alt text](https://github.com/AbdelrahmanElsherif/look-based-media-player/blob/master/Media_Player/Screenshot%20(179).png.png?raw=true)
+
+Press Face Detection button to enable Face Detection and Drowsiness feature 
+Webcam feed window will be shown 
+
+On entering a wrong file format or no file at all, file error window will pop up 
+![alt text](https://github.com/AbdelrahmanElsherif/look-based-media-player/blob/master/Media_Player/Screenshot%20(181).png.png?raw=true)
+Pressing Retry button, will enable the user to choose another file 
+Pressing Abort button, will close and the mediaplayer 
+
+On detecting eyes dowsiness and sleepliness, Drowsiness window will pop up 
+https://github.com/AbdelrahmanElsherif/look-based-media-player/blob/master/Media_Player/Screenshot%20(182).png
+Pressing Retry button, will enable the user to contiue watching 
+Pressing Abort button, will close and exit the medialayer  
+
+
+
  
  > Note: While face detection is on, you can manually pause by clicking on ESC to close the face detection first, then click on the pause button
  
