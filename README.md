@@ -53,8 +53,9 @@ python -m pip install -r requirements.txt
  ![alt text](https://github.com/AbdelrahmanElsherif/look-based-media-player/blob/master/Media_Player/Screenshot%20(182).png?raw=true)
 
    >Pressing Retry button, will enable the user to contiue watching <br />
-   >>Note: On pressing Retry user's eyes should be wide open to continue playing the video otherwise it might take a couple of times pressing Retry button <br />
-   >Pressing Abort button, will close and exit the medialayer  
+   Pressing Abort button, will close and exit the medialayer <br />
+    >>Note: On pressing Retry user's eyes should be wide open to continue playing the video otherwise it might take a couple of times   pressing Retry button 
+    
 
  ## Supported Formats 
 
