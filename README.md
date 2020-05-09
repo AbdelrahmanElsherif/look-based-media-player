@@ -16,7 +16,7 @@ python -m pip install -r requirements.txt
 ```
 
 ## Functionality
-Media Player GUI
+-Media Player GUI
 
 
 ![alt text](https://github.com/AbdelrahmanElsherif/look-based-media-player/blob/master/Media_Player/Screenshot%20(178).png?raw=true)
@@ -28,16 +28,16 @@ Media Player GUI
 
 
 
-Click on Open Video and choose the file you want to play then press the Play button 
--![alt text](https://github.com/AbdelrahmanElsherif/look-based-media-player/blob/master/Media_Player/Screenshot%20(179).png?raw=true)
+-Click on Open Video and choose the file you want to play then press the Play button 
+![alt text](https://github.com/AbdelrahmanElsherif/look-based-media-player/blob/master/Media_Player/Screenshot%20(179).png?raw=true)
 
 
 
 Press Face Detection button to enable Face Detection and Drowsiness feature 
 Webcam feed window will be shown 
 
-On entering a wrong file format or no file at all, file error window will pop up 
--![alt text](https://github.com/AbdelrahmanElsherif/look-based-media-player/blob/master/Media_Player/Screenshot%20(181).png?raw=true)
+-On entering a wrong file format or no file at all, file error window will pop up 
+![alt text](https://github.com/AbdelrahmanElsherif/look-based-media-player/blob/master/Media_Player/Screenshot%20(181).png?raw=true)
 
 
 
@@ -54,8 +54,8 @@ Pressing Retry button, will enable the user to choose another file
 Pressing Abort button, will close and the mediaplayer 
 
 
-On detecting eyes dowsiness and sleepliness, Drowsiness window will pop up 
--![alt text](https://github.com/AbdelrahmanElsherif/look-based-media-player/blob/master/Media_Player/Screenshot%20(182).png?raw=true)
+-On detecting eyes dowsiness and sleepliness, Drowsiness window will pop up 
+![alt text](https://github.com/AbdelrahmanElsherif/look-based-media-player/blob/master/Media_Player/Screenshot%20(182).png?raw=true)
 
 
 
