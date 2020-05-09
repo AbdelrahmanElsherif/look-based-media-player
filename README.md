@@ -34,7 +34,8 @@ python -m pip install -r requirements.txt
   HAN7OOT SORET EL WEBCAM FEED HENA 
   
    > Note: To regain manual control over mediaplayer, Press ESC to release webcam feed <br />
-   You can return back to face detection feature by pressing face detection button 
+   You can return back to face detection feature by pressing face detection button <br />
+   At first video will paused because user's face is not detected it 
 
  <br />
  <br />
@@ -52,6 +53,7 @@ python -m pip install -r requirements.txt
  ![alt text](https://github.com/AbdelrahmanElsherif/look-based-media-player/blob/master/Media_Player/Screenshot%20(182).png?raw=true)
 
    >Pressing Retry button, will enable the user to contiue watching <br />
+   >>Note: On pressing Retry user's eyes should be wide open to continue playing the video otherwise it might take a couple of times pressing Retry button <br />
    Pressing Abort button, will close and exit the medialayer  
 
  ## Supported Formats 
