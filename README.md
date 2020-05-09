@@ -34,6 +34,11 @@ python -m pip install -r requirements.txt
 
 - Press Face Detection button to enable Face Detection and Drowsiness feature <br />
   Webcam feed window will be shown <br />
+  
+  HAN7OOT SORET EL WEBCAM FEED HENA 
+  
+   > Note: To regain manual control over mediaplayer, Press ESC to release webcam feed <br />
+   You can return back to face detection feature by pressing face detection button 
 
 
 
@@ -71,8 +76,13 @@ python -m pip install -r requirements.txt
 
 
 
- 
- > Note: To regain manual control over mediaplayer, Press ESC to release webcam feed <br />
-   You can return back to face detection feature by pressing face detection button 
+## Supported Formats 
+
+- mp3 
+- mp4 
+- mov 
+- mkv 
+- wav 
+
  
 ---
