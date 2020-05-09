@@ -1,13 +1,20 @@
-A look based media player that pauses itself when user is not looking at it and resumes as soon as the user looks at it again.
-This is done using the camera or webcam on top of the computer. As long as the camera detects the users face looking at it, the media is played. The player pauses as soon as users face is not completely seen. When the user also is sleepy it pauses giving an alarm. 
+A look based media player that pauses automatically when user is not looking at it and resumes as soon as the user looks at it again.
+This is done using the camera or webcam on top of the computer. As long as the camera detects the users face looking at it, the media is played. The player pauses as soon as users face is not completely seen. When the user also is sleepy it pauses the video playing and gives a warning message to the user. 
 
 ---
 ## Algorithm
-- The Media Player is created using pyqt5
-- The face detection is done using opencv cascade classifier
-- The eye blinking and drowiness is done using  dlib’s pre-trained facial landmark detector.
+- The Media Player is created using PyQt5
+- Face Detection is done using opencv cascade classifier
+- Eye blinking and drowiness is done using  dlib’s pre-trained facial landmark detector.
 
 ---
+## Installation 
+- Download lastest most compatible python version to your OS https://www.python.org/downloads/
+- Download PyQt5 using pip command 
+```
+pip install pyqt5
+```
+
 ## Functionality
 
 ![alt text](https://github.com/AbdelrahmanElsherif/look-based-media-player/blob/master/Media_Player/Capture.PNG?raw=true)
