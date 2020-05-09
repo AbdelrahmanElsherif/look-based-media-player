@@ -51,8 +51,8 @@ python -m pip install -r requirements.txt
 
 
 
->Pressing Retry button, will enable the user to choose another file <br />
-Pressing Abort button, will close and the mediaplayer 
+  >Pressing Retry button, will enable the user to choose another file <br />
+  Pressing Abort button, will close and the mediaplayer 
 
 
 - On detecting eyes dowsiness and sleepliness, Drowsiness window will pop up <br />
@@ -66,8 +66,8 @@ Pressing Abort button, will close and the mediaplayer
 
 
 
->Pressing Retry button, will enable the user to contiue watching 
-Pressing Abort button, will close and exit the medialayer  
+  >Pressing Retry button, will enable the user to contiue watching <br />
+  Pressing Abort button, will close and exit the medialayer  
 
 
 
