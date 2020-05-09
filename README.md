@@ -21,10 +21,12 @@ python -m pip install -r requirements.txt
 ![alt text](https://github.com/AbdelrahmanElsherif/look-based-media-player/blob/master/Media_Player/Screenshot%20(178).png?raw=true)
  <br />
  <br />
+ 
 - Click on Open Video and choose the file you want to play then press the Play button <br />
 ![alt text](https://github.com/AbdelrahmanElsherif/look-based-media-player/blob/master/Media_Player/Screenshot%20(179).png?raw=true)
  <br />
  <br />
+ 
 - Press Face Detection button to enable Face Detection and Drowsiness feature <br />
   Webcam feed window will be shown <br />
   
@@ -35,6 +37,7 @@ python -m pip install -r requirements.txt
 
  <br />
  <br />
+ 
 - On entering a wrong file format or no file at all, file error window will pop up <br />
 ![alt text](https://github.com/AbdelrahmanElsherif/look-based-media-player/blob/master/Media_Player/Screenshot%20(181).png?raw=true)
 
@@ -42,6 +45,8 @@ python -m pip install -r requirements.txt
   Pressing Abort button, will close and the mediaplayer 
 
  <br />
+  <br />
+  
 - On detecting eyes dowsiness and sleepliness, Drowsiness window will pop up <br />
 ![alt text](https://github.com/AbdelrahmanElsherif/look-based-media-player/blob/master/Media_Player/Screenshot%20(182).png?raw=true)
 
