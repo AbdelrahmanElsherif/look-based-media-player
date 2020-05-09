@@ -1,2 +1,0 @@
-A look based media player that pauses itself when user is not looking at it and resumes as soon as the user looks at it again.
-This is done using the camera or webcam on top of the computer. As long as the camera detects the users face looking at it, the media is played. The player pauses as soon as users face is not completely seen. 
