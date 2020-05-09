@@ -102,7 +102,9 @@ class Window (QWidget):
                                    "background-color : red;"
                                    "}"
                                    )
-        self.stopBtn.pressed.connect(self.mediaplayer.stop)
+        self.stopBtn.pressed.connect(self.stop_video)
+
+
 
         self.label = QLabel()
         self.label.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Maximum)
@@ -198,10 +200,12 @@ class Window (QWidget):
             self.playBtn.setEnabled(True)
            # print(filename)
 
-        if not filename.endswith('.mp3')|filename.endswith('.mp4')|filename.endswith('.mov')|filename.endswith('.mp3')|filename.endswith('.mkv'):
+        if not filename.endswith('.mp3')|filename.endswith('.mp4')|filename.endswith('.mov')|filename.endswith('.mkv')\
+                |filename.endswith('.MP3')|filename.endswith('.MP4')|filename.endswith('.MOV')|filename.endswith('.MKV')\
+                |filename.endswith('.wav')|filename.endswith('.WAV'):
             msg1 = QMessageBox()
-            msg1.setWindowTitle("File Error ")
-            msg1.setText("Invalid File Type ")
+            msg1.setWindowTitle("File Error !")
+            msg1.setText("Invalid File Type")
             msg1.setIcon(QMessageBox.Warning)
             msg1.setWindowIcon(QIcon('file error.png'))
             msg1.setStandardButtons(QMessageBox.Retry | QMessageBox.Abort)
@@ -213,38 +217,35 @@ class Window (QWidget):
 
     def popup1(self,i):
         if i.text()=='Retry':
-            filename, _ = QFileDialog.getOpenFileName(self, "Open file", "",
-                                                      "mp3 Audio (*.mp3);mp4 Video (*.mp4);Movie files (*.mov);All files (*.*)")
-
-            if filename != '':
-                self.mediaplayer.setMedia(QMediaContent(QUrl.fromLocalFile(filename)))
-                self.playBtn.setEnabled(True)
-            # print(filename)
-
+            self.open_file()
         else:
             cv.destroyAllWindows()
+
+
+    def stop_video(self):
+        self.mediaplayer.stop()
+        self.playBtn.setIcon(QIcon('blueplay.jpg'))
+
 
 
     # If the video is paused clicking play button enables it, else if it's playing clicking play button pauses it
     def play_video(self):
         if self.mediaplayer.state()  == QMediaPlayer.PlayingState:
             self.mediaplayer.pause()
-            self.playBtn.setIcon(QIcon('bluepause.jpg'))
-            print("Paused")
+            self.playBtn.setIcon(QIcon('blueplay.jpg'))
 
         else:
             self.mediaplayer.play()
-            self.playBtn.setIcon(QIcon('blueplay.jpg'))
-            print("played")
+            self.playBtn.setIcon(QIcon('bluepause.jpg'))
 
 
     def mediastate_changed(self, state):
         if self.mediaplayer.state() == QMediaPlayer.PlayingState:
-            self.playBtn.setIcon(QIcon('bluepause.jpg'))
+            self.playBtn.setIcon(QIcon('blueplay.jpg'))
 
 
         else:
-            self.playBtn.setIcon(QIcon('blueplay.jpg'))
+            self.playBtn.setIcon(QIcon('bluepause.jpg'))
 
 
 
@@ -305,7 +306,6 @@ class Window (QWidget):
             # -- Detect faces
             faces = face_cascade.detectMultiScale(frame_gray, minSize=(85, 85))
             how_many_faces = len(faces)
-            print(how_many_faces)
             for (x, y, w, h) in faces:
                 center = (x + w // 2, y + h // 2)
                 frame = cv.ellipse(frame, center, (w // 2, h // 2), 0, 0, 360, (255, 0, 255), 4)
@@ -369,7 +369,7 @@ class Window (QWidget):
                 manual = 0
                 self.mediaplayer.pause()
                 self.mediaplayer.stateChanged
-                self.playBtn.setIcon(QIcon('bluepause.jpg'))
+                self.playBtn.setIcon(QIcon('blueplay.jpg'))
                 #self.mediaplayer.stateChanged.connect(self.mediastate_changed)
                 self.mediaplayer.positionChanged.connect(self.position_changed)
                 self.mediaplayer.durationChanged.connect(self.duration_changed)
@@ -377,7 +377,7 @@ class Window (QWidget):
                 manual = 0
                 self.mediaplayer.pause()
                 self.mediaplayer.stateChanged
-                self.playBtn.setIcon(QIcon('bluepause.jpg'))
+                self.playBtn.setIcon(QIcon('blueplay.jpg'))
                 # self.mediaplayer.stateChanged.connect(self.mediastate_changed)
                 self.mediaplayer.positionChanged.connect(self.position_changed)
                 self.mediaplayer.durationChanged.connect(self.duration_changed)
@@ -397,12 +397,11 @@ class Window (QWidget):
             else:
                 self.mediaplayer.play()
                 self.mediaplayer.stateChanged
-                self.playBtn.setIcon(QIcon('blueplay.jpg'))
+                self.playBtn.setIcon(QIcon('bluepause.jpg'))
 
             if cv.waitKey(10) == 27:
                 cap.release()
-                # sys.exit()
-                # cv2.destroyAllWindows()
+                cv.destroyWindow('YOU ARE BEING WATCHED ')
                 break
 
     def popup(self,i):
@@ -412,7 +411,7 @@ class Window (QWidget):
             ALARM_ON = False
             self.mediaplayer.play()
             self.mediaplayer.stateChanged
-            self.playBtn.setIcon(QIcon('blueplay.jpg'))
+            self.playBtn.setIcon(QIcon('bluepause.jpg'))
 
         if i.text() == "Abort":
             cv.detrotyAllWindows()
