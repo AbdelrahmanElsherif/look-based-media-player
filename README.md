@@ -38,28 +38,28 @@ python -m pip install -r requirements.txt
  <br />
  <br />
  
-- On entering a wrong file format or no file at all, file error window will pop up <br />
-![alt text](https://github.com/AbdelrahmanElsherif/look-based-media-player/blob/master/Media_Player/Screenshot%20(181).png?raw=true)
+ - On entering a wrong file format or no file at all, file error window will pop up <br />
+ ![alt text](https://github.com/AbdelrahmanElsherif/look-based-media-player/blob/master/Media_Player/Screenshot%20(181).png?raw=true)
 
-  >Pressing Retry button, will enable the user to choose another file <br />
-  Pressing Abort button, will close and the mediaplayer 
+   >Pressing Retry button, will enable the user to choose another file <br />
+   Pressing Abort button, will close and the mediaplayer 
 
  <br />
   <br />
   
-- On detecting eyes dowsiness and sleepliness, Drowsiness window will pop up <br />
-![alt text](https://github.com/AbdelrahmanElsherif/look-based-media-player/blob/master/Media_Player/Screenshot%20(182).png?raw=true)
+ - On detecting eyes dowsiness and sleepliness, Drowsiness window will pop up <br />
+ ![alt text](https://github.com/AbdelrahmanElsherif/look-based-media-player/blob/master/Media_Player/Screenshot%20(182).png?raw=true)
 
-  >Pressing Retry button, will enable the user to contiue watching <br />
-  Pressing Abort button, will close and exit the medialayer  
+   >Pressing Retry button, will enable the user to contiue watching <br />
+   Pressing Abort button, will close and exit the medialayer  
 
-## Supported Formats 
+ ## Supported Formats 
 
-- .mp3 
-- .mp4 
-- .mov 
-- .mkv 
-- .wav 
+ - .mp3 
+ - .mp4 
+ - .mov 
+ - .mkv 
+ - .wav 
 
  
 ---
