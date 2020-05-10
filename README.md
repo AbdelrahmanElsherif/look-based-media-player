@@ -1,6 +1,7 @@
 # Look-Based MediaPlayer 
-A look based media player that pauses automatically when user is not looking at it and resumes as soon as the user looks at it again.
-This is done using the camera or webcam on top of the computer. As long as the camera detects the users face looking at it, the media is played. The player pauses as soon as users face is not completely seen. When the user also is sleepy it pauses the video playing and gives a warning message to the user. 
+A look based media player that pauses automatically when user is not looking or paying attention and resumes as soon as the user is looking at it or his attention to the video is restored.  <br />
+This is done using the camera or webcam on top of the computer. As long as the camera detects the users face looking at it, the media is playing. The video pauses as soon as users face is not completely seen.  <br />
+When the user is sleepy for more than 48 secs, it pauses the video playing and gives a warning message to the user. 
 
 
 
@@ -15,10 +16,21 @@ This is done using the camera or webcam on top of the computer. As long as the c
 ---
 ## Installation 
 - Download lastest most compatible python version to your OS --> [Click Here](https://www.python.org/downloads/?c=hpgsf9 )
-- Python 3.6 and 3.7 were used in developing the project
+> Note: Python 3.6 and 3.7 were used in developing the project
+- Clone the repo or Download it as zip 
+- Put everything into a single folder  
+- Open cmd in project folder **Look Based Media Player** and run this command 
 ```
 python -m pip install -r requirements.txt
 ```
+
+## Usage 
+
+ - Go to  **Look Based Media Player** 
+ - Open **Output** folder and search for **LookAlive.exe** 
+ - Run and Experiment the Desktop app 
+      #### OR     
+ - Open **Look Alive.py** and run it 
 
 ## Functionality
 
