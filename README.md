@@ -60,7 +60,7 @@ python -m pip install -r requirements.txt
  ![alt text](https://github.com/AbdelrahmanElsherif/look-based-media-player/blob/master/Screenshots/Screenshot%20(181).png?raw=true)
 
    >Pressing Retry button, will enable the user to choose another file <br />
-   Pressing Abort button, will close and the mediaplayer 
+   Pressing Abort button, will close open file window  
 
  <br />
   <br />
