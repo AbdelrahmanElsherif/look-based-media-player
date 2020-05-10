@@ -1,52 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="925a5f35-d688-49bd-b339-62e1860b709f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Cascade_Classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Cascade_Classifier.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../camera.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/haarcascades/haarcascade_eye.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/haarcascades/haarcascade_eye_tree_eyeglasses.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/haarcascades/haarcascade_frontalcatface.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/haarcascades/haarcascade_frontalcatface_extended.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/haarcascades/haarcascade_frontalface_alt.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/haarcascades/haarcascade_frontalface_alt2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/haarcascades/haarcascade_frontalface_alt_tree.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/haarcascades/haarcascade_frontalface_default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/haarcascades/haarcascade_fullbody.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/haarcascades/haarcascade_lefteye_2splits.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/haarcascades/haarcascade_licence_plate_rus_16stages.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/haarcascades/haarcascade_lowerbody.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/haarcascades/haarcascade_profileface.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/haarcascades/haarcascade_righteye_2splits.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/haarcascades/haarcascade_russian_plate_number.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/haarcascades/haarcascade_smile.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/haarcascades/haarcascade_upperbody.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/haarcascades_cuda/haarcascade_eye.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/haarcascades_cuda/haarcascade_eye_tree_eyeglasses.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/haarcascades_cuda/haarcascade_frontalface_alt.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/haarcascades_cuda/haarcascade_frontalface_alt2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/haarcascades_cuda/haarcascade_frontalface_alt_tree.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/haarcascades_cuda/haarcascade_frontalface_default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/haarcascades_cuda/haarcascade_fullbody.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/haarcascades_cuda/haarcascade_lefteye_2splits.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/haarcascades_cuda/haarcascade_lowerbody.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/haarcascades_cuda/haarcascade_profileface.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/haarcascades_cuda/haarcascade_righteye_2splits.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/haarcascades_cuda/haarcascade_smile.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/haarcascades_cuda/haarcascade_upperbody.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/hogcascades/hogcascade_pedestrians.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/lbpcascades/lbpcascade_frontalcatface.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/lbpcascades/lbpcascade_frontalface.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/lbpcascades/lbpcascade_frontalface_improved.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/lbpcascades/lbpcascade_profileface.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/lbpcascades/lbpcascade_silverware.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/readme.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/vec_files/trainingfaces_24-24.vec" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../haarcascade_eye.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../haarcascade_frontalcatface.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../haarcascade_frontalface_alt.xml" beforeDir="false" />
-    </list>
+    <list default="true" id="925a5f35-d688-49bd-b339-62e1860b709f" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
