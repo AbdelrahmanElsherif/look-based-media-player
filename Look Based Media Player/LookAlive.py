@@ -45,6 +45,37 @@ class Window (QWidget):
         self.setWindowTitle("Look Alive")
         self.setGeometry(350,100,700,500)
         self.setWindowIcon(QIcon('Player.png'))
+        self.mainMenu = QMenuBar()
+        self.setStyleSheet("""
+               QMenuBar {
+                   background-color: rgb(49,49,49);
+                   color: rgb(255,255,255);
+                   border: 1px solid #000;
+               }
+
+               QMenuBar::item {
+                   background-color: rgb(49,49,49);
+                   color: rgb(255,255,255);
+               }
+
+               QMenuBar::item::selected {
+                   background-color: rgb(30,30,30);
+               }
+
+               QMenu {
+                   background-color: rgb(49,49,49);
+                   color: rgb(255,255,255);
+                   border: 1px solid #000;           
+               }
+
+               QMenu::item::selected {
+                   background-color: rgb(30,30,30);
+               }
+           """)
+        self.fileMenu = self.mainMenu.addMenu('&File')
+        self.fileMenu.addAction(QAction("Open Video", self))
+        self.fileMenu.addAction(QAction("Exit", self))
+        self.fileMenu.addAction(QAction("Help ", self))
         p = self.palette()
         p.setColor(QPalette.Window,Qt.white)
         self.setPalette(p)
@@ -61,7 +92,9 @@ class Window (QWidget):
         videowidget = QVideoWidget()
         faceDetetction = QPushButton("Face Detection")
         faceDetetction.setStyleSheet("color: white; font-size: 16px; background-color: #2b5b84; border-radius: 10px; padding: 10px; text-align: center; ")
+       # faceDetetction.setStyleSheet("QPushButton::pressed" "{" "background-color : orange;""}")
         faceDetetction.clicked.connect(self.FaceDetection)
+
 
         #Create Open button
         openBtn = QPushButton('Open Video')
@@ -218,8 +251,10 @@ class Window (QWidget):
     def popup1(self,i):
         if i.text()=='Retry':
             self.open_file()
-        else:
+
+        if i.text()=='Abort':
             cv.destroyAllWindows()
+            #cv.destroyWindow('Look Alive ')
 
 
     def stop_video(self):
@@ -237,6 +272,7 @@ class Window (QWidget):
         else:
             self.mediaplayer.play()
             self.playBtn.setIcon(QIcon('bluepause.jpg'))
+
 
 
     def mediastate_changed(self, state):
