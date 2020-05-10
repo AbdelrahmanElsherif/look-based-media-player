@@ -20,6 +20,15 @@ This is done using the camera or webcam on top of the computer. As long as the c
 python -m pip install -r requirements.txt
 ```
 
+## Usage 
+
+ - Download the contents of **Look Based Media Player** folder into a single folder on your PC  
+ - Open **Output** folder and search for **LookAlive.exe** 
+ - Run and Experiment the Desktop app 
+      #### OR
+ - Download the contents of **Look Based Media Player** folder into a single folder on your PC       
+ - Open **Look Alive.py** and run it 
+
 ## Functionality
 
 - Media Player GUI <br />
