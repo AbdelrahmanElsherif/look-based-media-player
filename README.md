@@ -1,7 +1,7 @@
 # Look-Based MediaPlayer 
 A look based media player that pauses automatically when user is not looking or paying attention and resumes as soon as the user is looking at it or his attention to the video is restored.
-
-This is done using the camera or webcam on top of the computer. As long as the camera detects the users face looking at it, the media is played. The player pauses as soon as users face is not completely seen. When the user also is sleepy it pauses the video playing and gives a warning message to the user. 
+This is done using the camera or webcam on top of the computer. As long as the camera detects the users face looking at it, the media is playing. The video pauses as soon as users face is not completely seen. 
+When the user is sleepy for more than 48 secs, it pauses the video playing and gives a warning message to the user. 
 
 
 
