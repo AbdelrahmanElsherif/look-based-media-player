@@ -9,7 +9,6 @@ import cv2 as cv
 from scipy.spatial import distance as dist
 from imutils.video import VideoStream
 from imutils import face_utils
-from threading import Thread
 import numpy as np
 import playsound
 import argparse
@@ -20,8 +19,12 @@ import dlib
 global ALARM_ON
 global ear
 
-def eye_aspect_ratio(eye):
 
+# The function used in Face Detection to compute the ear,
+# through computing the ratio of distances between
+# the vertical eye landmarks and the distances between the horizontal eye landmarks
+
+def eye_aspect_ratio(eye):
     # compute the euclidean distances between the two sets of
     # vertical eye landmarks (x, y)-coordinates
     A = dist.euclidean(eye[1], eye[5])
@@ -36,7 +39,6 @@ def eye_aspect_ratio(eye):
 
     # return the eye aspect ratio
     return ear
-
 
 
 class Window (QWidget):
@@ -82,52 +84,47 @@ class Window (QWidget):
         self.init_ui()
         self.show()
 
-    #To Create the widgets we need
+    # To Create the widgets we need
     def init_ui(self):
 
-        #Create a Media player object
+        # Create a Media player object
         self.mediaplayer = QMediaPlayer(None, QMediaPlayer.VideoSurface)
 
-        #Create Video widget object
+        # Create Video widget object
         videowidget = QVideoWidget()
         faceDetetction = QPushButton("Face Detection")
-        faceDetetction.setStyleSheet("color: white; font-size: 16px; background-color: #2b5b84; border-radius: 10px; padding: 10px; text-align: center; ")
-       # faceDetetction.setStyleSheet("QPushButton::pressed" "{" "background-color : orange;""}")
+        faceDetetction.setStyleSheet("color: white; font-size: 16px; background-color: #2b5b84;"
+                                     "border-radius: 10px; padding: 10px; text-align: center; ")
         faceDetetction.clicked.connect(self.FaceDetection)
 
-
-        #Create Open button
+        # Create Open button
         openBtn = QPushButton('Open Video')
         openBtn.clicked.connect(self.open_file)
-        openBtn.setStyleSheet("QPushButton::pressed"
-                                   "{"
-                                   "background-color : white;"
-                                   "}"
-                                   )
-        openBtn.setStyleSheet("color: white; font-size: 12px; background-color: #2b5b84; border-radius: 10px; padding: 10px; text-align: center;")
+        openBtn.setStyleSheet("QPushButton::pressed""{""background-color : white;""}")
+        openBtn.setStyleSheet("color: white; font-size: 12px; background-color: #2b5b84; border-radius: 10px;"
+                              " padding: 10px; text-align: center;")
 
         self.label2 =QLabel()
-        self.label2.setStyleSheet("color:#2b5b84 ; font-size: 12px; border-radius: 10px; padding: 10px; text-align: center;")
+        self.label2.setStyleSheet("color:#2b5b84 ; font-size: 12px; border-radius: 10px; padding:"
+                                  " 10px; text-align: center;")
         self.label2.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Maximum)
         self.label2.setText("To Exit Face Detection Press ESC")
 
-        #Create Play button
+        # Create Play button
         self.playBtn=QPushButton()
-        #self.playBtn .setEnabled(False)
         self.playBtn.setIcon(QIcon("blueplay.jpg"))
-       # self.playBtn.setStyleSheet("background-color: yellow ")
-        #self.playBtn.setIcon (self.style().standardIcon(QStyle.SP_MediaPlay))
+        # self.playBtn.setStyleSheet("background-color: yellow ")
+        # self.playBtn.setIcon (self.style().standardIcon(QStyle.SP_MediaPlay))
         self.playBtn.clicked.connect(self.play_video)
-        self.playBtn.setStyleSheet(
-            "color: black; font-size: 12px; background-color: #FF8C00; border-radius: 10px; padding: 10px; text-align: center;")
+        self.playBtn.setStyleSheet("color: black; font-size: 12px; background-color: #FF8C00;"
+                                   " border-radius: 10px; padding: 10px; text-align: center;")
         self.playBtn.setStyleSheet("QPushButton::pressed"
                                    "{"
                                    "background-color : green;"
                                    "}"
                                    )
 
-
-        #Create Stop button
+        # Create Stop button
         self.stopBtn = QPushButton()
         self.stopBtn.setIcon(QIcon("bluestop.jpg"))
         self.stopBtn.setStyleSheet("QPushButton::pressed"
@@ -137,25 +134,20 @@ class Window (QWidget):
                                    )
         self.stopBtn.pressed.connect(self.stop_video)
 
-
-
         self.label = QLabel()
         self.label.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Maximum)
 
-
-        #Create slider
+        # Create slider
         self.slider=QSlider(Qt.Horizontal)
         self.slider.setRange(0, 0)
         self.slider.sliderMoved.connect(self.set_position)
 
-
-        #create volume label image
+        # create volume label image
         self.label1=QLabel()
         self.label1.setText("")
         self.label1.setPixmap(QPixmap("speaker-volume"))
-        #self.label1.setFixedSize(100,100)
 
-        #create volume slider
+        # create volume slider
         self.volumeSlider = QSlider()
         self.volumeSlider.setMaximum(100)
         self.volumeSlider.setProperty("value", 100)
@@ -163,15 +155,14 @@ class Window (QWidget):
         self.volumeSlider.setObjectName("volumeSlider")
         self.volumeSlider.valueChanged.connect(self.mediaplayer.setVolume)
 
-
         spacer =QSpacerItem(20, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
         spacerItem1 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-        #Create Hbox Layout
+        # Create Hbox Layout
         hboxlayout= QHBoxLayout()
         hboxlayout.setContentsMargins(0, 0, 0, 0)
 
-        #Set Widgets to the hbox layout
+        # Set Widgets to the hbox layout
         hboxlayout.addWidget(openBtn)
         hboxlayout.addWidget(self.playBtn)
         hboxlayout.addWidget(self.stopBtn)
@@ -179,14 +170,11 @@ class Window (QWidget):
         hboxlayout.addWidget(self.label1)
         hboxlayout.addWidget(self.volumeSlider)
 
-
-        #hboxlayout.addItem(spacerItem)
-
-        #Create another hbox
+        # Create another hbox
         hboxlayout1 = QHBoxLayout()
         hboxlayout1.setContentsMargins(0, 0, 0, 0)
 
-        #Set its widgets
+        # Set its widgets
         self.currentTimeLabel = QLabel()
         self.currentTimeLabel.setMinimumSize(QSize(80, 0))
         self.currentTimeLabel.setAlignment(Qt.AlignRight | Qt.AlignTrailing )
@@ -197,15 +185,8 @@ class Window (QWidget):
         self.totalTimeLabel.setObjectName("totalTimeLabel")
         self.currentTimeLabel.setText("0:00")
         self.totalTimeLabel.setText( "0:00")
-       # hboxlayout1.addWidget(self.currentTimeLabel)
-        #hboxlayout1.addWidget(self.slider)
-       # hboxlayout1.addWidget(self.totalTimeLabel)
 
-
-
-
-
-        #create vbox layout ( will be the main layout including the hbox layout)
+        # create vbox layout ( will be the main layout including the hbox layout)
         vboxlayout=QVBoxLayout()
         vboxlayout.addWidget(videowidget)
         vboxlayout.addWidget(self.slider)
@@ -215,27 +196,27 @@ class Window (QWidget):
 
         # set the layout to your window
         self.setLayout((vboxlayout))
+
         # get the video to output on the window
         self.mediaplayer.setVideoOutput(videowidget)
 
         # media player signals
-
         self.mediaplayer.stateChanged.connect(self.mediastate_changed)
         self.mediaplayer.positionChanged.connect(self.position_changed)
         self.mediaplayer.durationChanged.connect(self.duration_changed)
 
     # To choose file from Pc method & enabling the play button
     def open_file(self):
-        filename, _ = QFileDialog.getOpenFileName(self, "Open file", "", "mp3 Audio (*.mp3);mp4 Video (*.mp4);Movie files (*.mov);All files (*.*)")
+        filename, _ = QFileDialog.getOpenFileName(self, "Open file", "", "mp3 Audio (*.mp3);mp4 Video (*.mp4);"
+                                                                         "Movie files (*.mov);All files (*.*)")
 
-        if filename!= '':
+        if filename != '':
             self.mediaplayer.setMedia(QMediaContent(QUrl.fromLocalFile(filename)))
             self.playBtn.setEnabled(True)
-           # print(filename)
 
-        if not filename.endswith('.mp3')|filename.endswith('.mp4')|filename.endswith('.mov')|filename.endswith('.mkv')\
-                |filename.endswith('.MP3')|filename.endswith('.MP4')|filename.endswith('.MOV')|filename.endswith('.MKV')\
-                |filename.endswith('.wav')|filename.endswith('.WAV'):
+        if not filename.endswith('.mp3') | filename.endswith('.mp4') | filename.endswith('.mov') | filename.endswith('.mkv')\
+                | filename.endswith('.MP3') | filename.endswith('.MP4') | filename.endswith('.MOV') | filename.endswith('.MKV')\
+                | filename.endswith('.wav') | filename.endswith('.WAV'):
             msg1 = QMessageBox()
             msg1.setWindowTitle("File Error !")
             msg1.setText("Invalid File Type")
@@ -243,75 +224,58 @@ class Window (QWidget):
             msg1.setWindowIcon(QIcon('file error.png'))
             msg1.setStandardButtons(QMessageBox.Retry | QMessageBox.Abort)
             msg1.setStyleSheet(
-                'QMessageBox {background-color: #2b5b84; color: white;}\n QMessageBox {color: white;}\n QPushButton{color: white; font-size: 16px; background-color: #1d1d1d; border-radius: 10px; padding: 10px; text-align: center;}\n QPushButton:hover{color: #2b5b84;}')
+                'QMessageBox {background-color: #2b5b84; color: white;}\n QMessageBox {color: white;}\n '
+                'QPushButton{color: white; font-size: 16px; background-color: #1d1d1d; '
+                'border-radius: 10px; padding: 10px; text-align: center;}\n QPushButton:hover{color: #2b5b84;}')
             msg1.buttonClicked.connect(self.popup1)
             y = msg1.exec_()
 
-
-    def popup1(self,i):
-        if i.text()=='Retry':
+    # pop up message if the user choose an invalid input type
+    def popup1(self, i):
+        # if the user choose retry he can can try again to choose a file of a valid format
+        if i.text() == 'Retry':
             self.open_file()
-
-        if i.text()=='Abort':
+        # if the user chooses to abort then the window is closed
+        if i.text() == 'Abort':
             cv.destroyAllWindows()
-            #cv.destroyWindow('Look Alive ')
-
-
+    # the function which stops the media, it resets it if you want to play it again
     def stop_video(self):
         self.mediaplayer.stop()
         self.playBtn.setIcon(QIcon('blueplay.jpg'))
-
-
 
     # If the video is paused clicking play button enables it, else if it's playing clicking play button pauses it
     def play_video(self):
         if self.mediaplayer.state()  == QMediaPlayer.PlayingState:
             self.mediaplayer.pause()
             self.playBtn.setIcon(QIcon('blueplay.jpg'))
-
         else:
             self.mediaplayer.play()
             self.playBtn.setIcon(QIcon('bluepause.jpg'))
 
-
-
     def mediastate_changed(self, state):
         if self.mediaplayer.state() == QMediaPlayer.PlayingState:
             self.playBtn.setIcon(QIcon('blueplay.jpg'))
-
-
         else:
             self.playBtn.setIcon(QIcon('bluepause.jpg'))
-
-
 
     def position_changed(self, position):
         self.slider.setValue(position)
 
-
     def duration_changed(self, duration):
         self.slider.setRange(0, duration)
 
-
     def set_position(self, position):
         self.mediaplayer.setPosition(position)
-
 
     def handle_errors(self):
         self.playBtn.setEnabled(False)
         self.label.setText("Error: " + self.mediaplayer.errorString())
 
-
-
     def FaceDetection(self):
-
-        # define two constants, one for the eye aspect ratio to indicate
-        # blink and then a second constant for the number of consecutive
-        # frames the eye must be below the threshold for to set off the
-        # alarm
-
-        EYE_AR_THRESH = 0.3
-        EYE_AR_CONSEC_FRAMES = 48
+        # threshold ration to indicate a blink
+        EYE_AR_THRESH = 0.2
+        # number of frames that if the value of threshold is lower than it, it pauses
+        EYE_AR_CONSEC_FRAMES = 30
 
         # initialize the frame counter as well as a boolean used to
         # indicate if the alarm is going off
@@ -320,7 +284,6 @@ class Window (QWidget):
 
         # initialize dlib's face detector (HOG-based) and then create
         # the facial landmark predictor
-        print("[INFO] loading facial landmark predictor...")
         detector = dlib.get_frontal_face_detector()
         predictor = dlib.shape_predictor('shape_predictor_68_face_landmarks.dat')
 
@@ -329,78 +292,79 @@ class Window (QWidget):
         (lStart, lEnd) = face_utils.FACIAL_LANDMARKS_IDXS["left_eye"]
         (rStart, rEnd) = face_utils.FACIAL_LANDMARKS_IDXS["right_eye"]
 
-        # -- 2. Read the video stream
+        # open the webcam and read the stream
         cap = cv.VideoCapture(0)
+        # use opencv cascade classifier in detecting the face
         face_cascade = cv.CascadeClassifier("haarcascade_frontalface_alt.xml")
 
         while True:
+            # get the frames from the webcam
             ret, frame = cap.read()
+            # convert the frames into grey
             frame_gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
             frame_gray = cv.equalizeHist(frame_gray)
+            # use the detector and get the rectangles from it
             rects = detector(frame_gray, 0)
 
             # -- Detect faces
             faces = face_cascade.detectMultiScale(frame_gray, minSize=(85, 85))
+            # count the number of face in front of the cam
             how_many_faces = len(faces)
+
             for (x, y, w, h) in faces:
+                # detect the center of the face
                 center = (x + w // 2, y + h // 2)
+                # draw an ellipse on the face
                 frame = cv.ellipse(frame, center, (w // 2, h // 2), 0, 0, 360, (255, 0, 255), 4)
                 faceROI = frame_gray[y:y + h, x:x + w]
 
             for rect in rects:
-                # determine the facial landmarks for the face region, then
-                # convert the facial landmark (x, y)-coordinates to a NumPy
-                # array
+                # determine the facial landmarks for the face
                 shape = predictor(frame_gray, rect)
+                # convert the facial landmark from (x, y) coordinates to a numpy array
                 shape = face_utils.shape_to_np(shape)
-                # extract the left and right eye coordinates, then use the
-                # coordinates to compute the eye aspect ratio for both eyes
+                # extract the left and right eye coordinates
                 leftEye = shape[lStart:lEnd]
                 rightEye = shape[rStart:rEnd]
+                # use the coordinates to compute the eye aspect ratio for both eyes
                 leftEAR = eye_aspect_ratio(leftEye)
                 rightEAR = eye_aspect_ratio(rightEye)
 
                 # average the eye aspect ratio together for both eyes
                 ear = (leftEAR + rightEAR) / 2.0
 
-                # compute the convex hull for the left and right eye, then
-                # visualize each of the eyes
+                # compute the convex hull for the left and right eye
                 leftEyeHull = cv.convexHull(leftEye)
                 rightEyeHull = cv.convexHull(rightEye)
-                cv.drawContours(frame, [leftEyeHull], -1, (0, 255, 0), 1)
-                cv.drawContours(frame, [rightEyeHull], -1, (0, 255, 0), 1)
+                # draw contours around eyes
+                cv.drawContours(frame, [leftEyeHull], -1, (75, 50, 130), 1)
+                cv.drawContours(frame, [rightEyeHull], -1, (75, 50, 130), 1)
 
-                # check to see if the eye aspect ratio is below the blink
-                # threshold, and if so, increment the blink frame counter
+                # check if the eye aspect ratio is below the threshold, if so increment the counter of frames
                 if ear < EYE_AR_THRESH:
                     COUNTER += 1
 
-                    # if the eyes were closed for a sufficient number of
-                    # then sound the alarm
+                    # if the eyes were closed for more than the number of frames threshold (30) then put the alarm on
                     if COUNTER >= EYE_AR_CONSEC_FRAMES:
                         # if the alarm is not on, turn it on
                         if not ALARM_ON:
                             ALARM_ON = True
 
                         # draw an alarm on the frame
-                        cv.putText(frame, "DROWSINESS ALERT!", (10, 30),
-                                   cv.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
+                        cv.putText(frame, "Sleepy Eyes Detected", (10, 30),
+                                   cv.FONT_HERSHEY_SIMPLEX, 0.7, (255, 0, 0), 2)
 
-                # otherwise, the eye aspect ratio is not below the blink
-                # threshold, so reset the counter and alarm
+                # if the ear is greater than the threshold then reset the counter of frames
                 else:
                     COUNTER = 0
                     ALARM_ON = False
 
-                # draw the computed eye aspect ratio on the frame to help
-                # with debugging and setting the correct eye aspect ratio
-                # thresholds and frame counters
+                # put the value of ear detected
                 cv.putText(frame, "EAR: {:.2f}".format(ear), (300, 30),
-                           cv.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
-
-
-
+                           cv.FONT_HERSHEY_SIMPLEX, 0.7, (255, 0, 0), 2)
+            # visualize the camera frame
             cv.imshow('YOU ARE BEING WATCHED ', frame)
+            # if no faces are detected then pause
             if how_many_faces == 0:
                 manual = 0
                 self.mediaplayer.pause()
@@ -409,7 +373,8 @@ class Window (QWidget):
                 #self.mediaplayer.stateChanged.connect(self.mediastate_changed)
                 self.mediaplayer.positionChanged.connect(self.position_changed)
                 self.mediaplayer.durationChanged.connect(self.duration_changed)
-            elif ALARM_ON == True :
+            # if the alarm is on which means the ear is less than the threshold for 30 frames then pause
+            elif ALARM_ON:
                 manual = 0
                 self.mediaplayer.pause()
                 self.mediaplayer.stateChanged
@@ -417,47 +382,47 @@ class Window (QWidget):
                 # self.mediaplayer.stateChanged.connect(self.mediastate_changed)
                 self.mediaplayer.positionChanged.connect(self.position_changed)
                 self.mediaplayer.durationChanged.connect(self.duration_changed)
-              #  error_dialog = QErrorMessage()
-              #  error_dialog.showMessage("You're getting Sleepy")
-             #   error_dialog.set
+                # alert that the person is sleepy and must choose to either continue watching or abort&close the player
                 msg = QMessageBox()
                 msg.setWindowTitle("Drowsiness ")
                 msg.setText("You're getting sleepy would you like to ")
                 msg.setIcon(QMessageBox.Warning)
                 msg.setWindowIcon(QIcon('sleepy1.png'))
-                msg.setStandardButtons( QMessageBox.Retry| QMessageBox.Abort )
-                msg.setStyleSheet(
-                    'QMessageBox {background-color: #2b5b84; color: white;}\n QMessageBox {color: white;}\n QPushButton{color: white; font-size: 16px; background-color: #1d1d1d; border-radius: 10px; padding: 10px; text-align: center;}\n QPushButton:hover{color: #2b5b84;}')
+                msg.setStandardButtons(QMessageBox.Retry | QMessageBox.Abort)
+                msg.setStyleSheet('QMessageBox {background-color: #2b5b84; color: white;}\n'
+                                  ' QMessageBox {color: white;}\n ''QPushButton{color: white; font-size: 16px;'
+                                  'background-color: #1d1d1d;''border-radius: 10px; padding: 10px;'
+                                  ' text-align: center;}\n QPushButton:hover{color: #2b5b84;}')
                 msg.buttonClicked.connect(self.popup)
                 x= msg.exec_()
+            # if not sleepy or the face is detected then continue playing
             else:
                 self.mediaplayer.play()
                 self.mediaplayer.stateChanged
                 self.playBtn.setIcon(QIcon('bluepause.jpg'))
-
+            # if ESC button is hit, then the camera frame is closed and the user is back to manual control
             if cv.waitKey(10) == 27:
                 cap.release()
                 cv.destroyWindow('YOU ARE BEING WATCHED ')
                 break
 
-    def popup(self,i):
-        print(i.text())
+    # the message the pops up if the user is sleepy
+    def popup(self, i):
+        # if the user choose to Retry, then the media player is resumed and the ear is back to normal
+        # and the alarm if now off
         if i.text() == "Retry":
             ear = 0.31
             ALARM_ON = False
             self.mediaplayer.play()
             self.mediaplayer.stateChanged
             self.playBtn.setIcon(QIcon('bluepause.jpg'))
-
+        # if the user chooses to abort then the media player is closed and the user can sleep
         if i.text() == "Abort":
-            cv.detrotyAllWindows()
+            sys.exit(app.exec_())
 
-
-
-
-#Initiate the application
-app=QApplication(sys.argv)
+# Initiate the application
+app = QApplication(sys.argv)
 app.setStyle("Fusion")
-#Make an instance of the Window class
-window=Window()
+# Make an instance of the Window class
+window = Window()
 sys.exit(app.exec_())
