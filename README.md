@@ -3,13 +3,15 @@ A look based media player that pauses automatically when user is not looking or 
 This is done using the camera or webcam on top of the computer. As long as the camera detects the users face looking at it, the media is playing. The video pauses as soon as users face is not completely seen.  <br />
 When the user is sleepy for more than 48 secs, it pauses the video playing and gives a warning message to the user. 
 
-
-
 ---
+## Team Members 
+- Abdelrahman Tawfiek Elsherif 
+- Doha Mustafa Niazy 
+
 ## Overview Demo
  ![alt text](https://github.com/AbdelrahmanElsherif/look-based-media-player/blob/master/Screenshots/ezgif.com-crop.gif?raw=true)  <br />
 **For Detailed video** [Click Here](https://youtu.be/k3kdQFkdYWA)
-
+---
 ## Algorithm
 - The Media Player is created using PyQt5
 - Face Detection is done using opencv cascade classifier
@@ -25,7 +27,7 @@ When the user is sleepy for more than 48 secs, it pauses the video playing and g
 ```
 python -m pip install -r requirements.txt
 ```
-
+---
 ## Usage 
 
  - Go to  **Look Based Media Player** 
@@ -33,7 +35,7 @@ python -m pip install -r requirements.txt
  - Run and Experiment the Desktop app 
       #### OR     
  - Open **Look Alive.py** and run it 
-
+---
 ## Functionality
 
 - Media Player GUI <br />
@@ -75,7 +77,7 @@ python -m pip install -r requirements.txt
    Pressing Abort button, will close and exit the medialayer <br />
     >>Note: On pressing Retry user's eyes should be wide open to continue playing the video otherwise it might take a couple of times   pressing Retry button 
     
-
+---
  ## Supported Formats 
 
  - .mp3 
