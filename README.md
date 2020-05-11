@@ -47,7 +47,7 @@ python -m pip install -r requirements.txt
 - Press Face Detection button to enable Face Detection and Drowsiness feature <br />
   Webcam feed window will be shown <br />
   
-  HAN7OOT SORET EL WEBCAM FEED HENA 
+ ![alt text](https://github.com/AbdelrahmanElsherif/look-based-media-player/blob/master/Screenshots/Screenshot%20(191).png?raw=true)
   
    > Note: To regain manual control over mediaplayer, Press ESC to release webcam feed <br />
    You can return back to face detection feature by pressing face detection button <br />
