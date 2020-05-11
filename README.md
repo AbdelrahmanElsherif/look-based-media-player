@@ -7,10 +7,11 @@ When the user is sleepy for more than 48 secs, it pauses the video playing and g
 ## Team Members 
 - Abdelrahman Tawfiek Elsherif 
 - Doha Mustafa Niazy 
-
+---
 ## Overview Demo
  ![alt text](https://github.com/AbdelrahmanElsherif/look-based-media-player/blob/master/Screenshots/ezgif.com-crop.gif?raw=true)  <br />
-**For Detailed video** [Click Here](https://youtu.be/k3kdQFkdYWA)
+**For Detailed video [Click Here](https://youtu.be/k3kdQFkdYWA)**
+
 ---
 ## Algorithm
 - The Media Player is created using PyQt5
