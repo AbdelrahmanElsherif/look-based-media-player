@@ -17,7 +17,7 @@ When the user is sleepy for more than 48 secs, it pauses the video playing and g
 
 ---
 ## Installation 
-- Download lastest most compatible python version to your OS --> [Click Here](https://www.python.org/downloads/?c=hpgsf9 )
+- Download lastest most compatible python version to your OS [Click Here](https://www.python.org/downloads/?c=hpgsf9 )
 > Note: Python 3.6 and 3.7 were used in developing the project
 - Clone the repo or Download it as zip 
 - Put everything into a single folder  
