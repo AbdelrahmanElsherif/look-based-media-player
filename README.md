@@ -7,7 +7,7 @@ When the user is sleepy for more than 48 secs, it pauses the video playing and g
 
 ---
 ## Presentation Demo 
-
+ ![alt text](https://github.com/AbdelrahmanElsherif/look-based-media-player/blob/master/Screenshots/bandicam-2020-05-10-08-54-35-517.gif?raw=true)
 ## Algorithm
 - The Media Player is created using PyQt5
 - Face Detection is done using opencv cascade classifier
