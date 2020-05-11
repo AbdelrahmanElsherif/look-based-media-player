@@ -49,6 +49,7 @@ python -m pip install -r requirements.txt
   
  ![alt text](https://github.com/AbdelrahmanElsherif/look-based-media-player/blob/master/Screenshots/Screenshot%20(191).png?raw=true)
   
+ 
    > Note: To regain manual control over mediaplayer, Press ESC to release webcam feed <br />
    You can return back to face detection feature by pressing face detection button <br />
    >>At first video might pause because user's face is not detected yet
