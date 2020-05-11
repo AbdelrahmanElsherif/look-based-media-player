@@ -27,7 +27,7 @@ python -m pip install -r requirements.txt
 ## Usage 
 
  - Go to  **Look Based Media Player** 
- - Open **Output** folder and search for **LookAlive.exe** 
+ - Open **output\LookAlive** folder and search for **LookAlive.exe** 
  - Run and Experiment the Desktop app 
       #### OR     
  - Open **Look Alive.py** and run it 
