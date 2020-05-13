@@ -28,6 +28,7 @@ When the user is sleepy for more than 48 secs, it pauses the video playing and g
 ```
 python -m pip install -r requirements.txt
 ```
+- You might need to install these filters [Click Here](https://anime.my/download/lav-filters-megamix-x64/ ) for the player to run 
 ---
 ## Usage 
 
